@@ -94,26 +94,27 @@ export const sendIncidentMessage = async () => {
   const message = `NDP INCIDENT REPORT (Case ID:${caseID}/#${caseNumber})\n\n1. NATURE OF INCIDENT\n${natureOfIncident}\n\n2. DATE/ TIME OF INCIDENT\n${date}/ ${time}\n\n3. PARTICULARS OF INDIVIDUAL\n${name}/ ${nric}/ SMC\n\n4. LOCATION OF INCIDENT\n${location}\n\n5. BRIEF DESCRIPTION\n${description}\n\n6. UPDATES\n${update}\n\n7. NOK INFORMED\n${nokInformed}\n\n8. HHQ (GSOC/3 DIV/ HQ SCE) INFORMED\n-EXCO OS: ${timeExcoOs}\n-GSOC: ${timeGsoc}\n\n9. REPORTED BY\nMAJ Dixon Koh, Incident Mgmt IC SMC\n\n10. ACTION REQUIRED BY OS OFFICE\n${actionByOs}\n\n11. POC \n${pocName}\n${pocNumber}`;
 
   const url = `https://hook.eu2.make.com/5wmtbd2mqzs8jlafrci42cmlflketyrz`;
+  const testUrl = `https://api.telegram.org/bot7677613806:AAHuIpblzFnJcUYKisgYITWskDj9jhtXPXI/sendMessage`;
 
-  await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      chat_id: CONSTANTS.CHANNELS.INCIDENT_REPORTING_CHAT,
-      text: message,
-    }),
-  });
-
-  // await fetch(testUrl, {
+  // await fetch(url, {
   //   method: "POST",
   //   headers: {
   //     "Content-Type": "application/json",
   //   },
   //   body: JSON.stringify({
-  //     chat_id: CONSTANTS.CHANNELS.TEST_INCIDENT_REPORTING_CHAT,
+  //     chat_id: CONSTANTS.CHANNELS.INCIDENT_REPORTING_CHAT,
   //     text: message,
   //   }),
   // });
+
+  await fetch(testUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      chat_id: CONSTANTS.CHANNELS.TEST_INCIDENT_REPORTING_CHAT,
+      text: message,
+    }),
+  });
 };

@@ -393,74 +393,85 @@ const SFTForm = () => {
           onChange={onPocNumberChange}
         />
       </Form.Item>
-      <Form.Item
-        label="TIME EXCO OS INFORMED"
-        name="timeExcoOs"
-        help="Only fill in this field when instructed by the L2 Safety"
-      >
-        <TimePicker
-          format={"HH:mm"}
-          disabled={!isActivityStarted}
-          defaultValue={
-            getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_EXCO_OS) !== null
-              ? dayjs(
-                  getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_EXCO_OS),
-                  "HHmm"
-                )
-              : ""
-          }
-          allowClear={false}
-          onChange={onTimeExcoOsChange}
-        />
-      </Form.Item>
-      <Form.Item
-        label="TIME GSOC INFORMED"
-        name="timeGsoc"
-        help="Only fill in this field when instructed by the L2 Safety"
-      >
-        <TimePicker
-          format={"HH:mm"}
-          disabled={!isActivityStarted}
-          defaultValue={
-            getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_GSOC) !== null
-              ? dayjs(getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_GSOC), "HHmm")
-              : ""
-          }
-          allowClear={false}
-          onChange={onTimeGsocChange}
-        />
-      </Form.Item>
-      <Form.Item
-        label="CASE NUMBER"
-        name="caseNumber"
-        help="Only fill in this field when instructed by the L2 Safety"
-      >
-        <Input
-          defaultValue={
-            getFromLocal(CONSTANTS.FORM_ITEM_KEYS.CASE_NUMBER) !== null
-              ? getFromLocal(CONSTANTS.FORM_ITEM_KEYS.CASE_NUMBER)
-              : ""
-          }
-          maxLength={2}
-          disabled={!isActivityStarted}
-          onChange={onCaseNumberChange}
-        />
-      </Form.Item>
-      <Form.Item
-        label="ACTION REQUIRED BY OS OFFICE"
-        name="actionByOs"
-        help="Only fill in this field when instructed by the L2 Safety"
-      >
-        <Input.TextArea
-          defaultValue={
-            getFromLocal(CONSTANTS.FORM_ITEM_KEYS.ACTION_BY_OS) !== null
-              ? getFromLocal(CONSTANTS.FORM_ITEM_KEYS.ACTION_BY_OS)
-              : ""
-          }
-          disabled={!isActivityStarted}
-          onChange={onActionByOsChange}
-        />
-      </Form.Item>
+      {isActivityStarted && (
+        <Form.Item
+          label="TIME EXCO OS INFORMED"
+          name="timeExcoOs"
+          help="Only fill in this field when instructed by the L2 Safety"
+        >
+          <TimePicker
+            format={"HH:mm"}
+            disabled={!isActivityStarted}
+            defaultValue={
+              getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_EXCO_OS) !== null
+                ? dayjs(
+                    getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_EXCO_OS),
+                    "HHmm"
+                  )
+                : ""
+            }
+            allowClear={false}
+            onChange={onTimeExcoOsChange}
+          />
+        </Form.Item>
+      )}
+      {isActivityStarted && (
+        <Form.Item
+          label="TIME GSOC INFORMED"
+          name="timeGsoc"
+          help="Only fill in this field when instructed by the L2 Safety"
+        >
+          <TimePicker
+            format={"HH:mm"}
+            disabled={!isActivityStarted}
+            defaultValue={
+              getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_GSOC) !== null
+                ? dayjs(
+                    getFromLocal(CONSTANTS.FORM_ITEM_KEYS.TIME_GSOC),
+                    "HHmm"
+                  )
+                : ""
+            }
+            allowClear={false}
+            onChange={onTimeGsocChange}
+          />
+        </Form.Item>
+      )}
+      {isActivityStarted && (
+        <Form.Item
+          label="CASE NUMBER"
+          name="caseNumber"
+          help="Only fill in this field when instructed by the L2 Safety"
+        >
+          <Input
+            defaultValue={
+              getFromLocal(CONSTANTS.FORM_ITEM_KEYS.CASE_NUMBER) !== null
+                ? getFromLocal(CONSTANTS.FORM_ITEM_KEYS.CASE_NUMBER)
+                : ""
+            }
+            maxLength={2}
+            disabled={!isActivityStarted}
+            onChange={onCaseNumberChange}
+          />
+        </Form.Item>
+      )}
+      {isActivityStarted && (
+        <Form.Item
+          label="ACTION REQUIRED BY OS OFFICE"
+          name="actionByOs"
+          help="Only fill in this field when instructed by the L2 Safety"
+        >
+          <Input.TextArea
+            defaultValue={
+              getFromLocal(CONSTANTS.FORM_ITEM_KEYS.ACTION_BY_OS) !== null
+                ? getFromLocal(CONSTANTS.FORM_ITEM_KEYS.ACTION_BY_OS)
+                : ""
+            }
+            disabled={!isActivityStarted}
+            onChange={onActionByOsChange}
+          />
+        </Form.Item>
+      )}
       {!isActivityStarted && (
         <Form.Item>
           <Button
