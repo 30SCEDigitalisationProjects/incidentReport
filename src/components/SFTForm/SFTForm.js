@@ -495,7 +495,7 @@ const SFTForm = () => {
         <Form.Item>
           <Popconfirm
             title="Close Incident Report"
-            description="Are you sure to close this incident report?"
+            description="Are you sure you want to close this incident report?"
             onConfirm={onFinishActivity}
             okText="Yes"
             cancelText="No"

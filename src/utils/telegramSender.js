@@ -96,25 +96,25 @@ export const sendIncidentMessage = async () => {
   const url = `https://hook.eu2.make.com/5wmtbd2mqzs8jlafrci42cmlflketyrz`;
   const testUrl = `https://api.telegram.org/bot7677613806:AAHuIpblzFnJcUYKisgYITWskDj9jhtXPXI/sendMessage`;
 
-  // await fetch(url, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     chat_id: CONSTANTS.CHANNELS.INCIDENT_REPORTING_CHAT,
-  //     text: message,
-  //   }),
-  // });
-
-  await fetch(testUrl, {
+  await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      chat_id: CONSTANTS.CHANNELS.TEST_INCIDENT_REPORTING_CHAT,
+      chat_id: CONSTANTS.CHANNELS.INCIDENT_REPORTING_CHAT,
       text: message,
     }),
   });
+
+  // await fetch(testUrl, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     chat_id: CONSTANTS.CHANNELS.TEST_INCIDENT_REPORTING_CHAT,
+  //     text: message,
+  //   }),
+  // });
 };

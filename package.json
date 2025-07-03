@@ -1,7 +1,7 @@
 {
   "name": "incident-report",
   "version": "0.1.0",
-  "homepage": "https://30scedigitalisationprojects.github.io/incidentreport",
+  "homepage": "https://30scedigitalisationprojects.github.io/incidentReport",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
